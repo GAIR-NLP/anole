@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Anole: An Open, Autoregressive and Native Multimodal Models for Interleaved Image-Text Generation">
+  <meta name="keywords" content="LLMs, LMMs, Multimodality">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anole: An Open, Autoregressive and Native Multimodal Models for Interleaved Image-Text Generation</title>
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/anole.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://github.com/GAIR-NLP/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/GAIR-NLP/abel">
+            Abel
+          </a>
+          <a class="navbar-item" href="https://gair-nlp.github.io/MathPile/">
+            MathPile
+          </a>
+          <a class="navbar-item" href="https://gair-nlp.github.io/ReAlign/">
+            ReAlign
+          </a>
+          <a class="navbar-item" href="https://gair-nlp.github.io/OlympicArena/">
+            OlympicArena
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Anole: An Open, Autoregressive and Native Multimodal Models for Interleaved Image-Text Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://ethanc111.github.io/">Ethan Chern*</a><sup>1, 4</sup>,</span>
+            <span class="author-block"><a href="https://github.com/JoyBoy-Su">Jiadi Su*</a><sup>3,4</sup>,</span>
+            <span class="author-block"><a href="https://mantle2048.github.io/">Yan Ma*</a><sup>3,4</sup>,</span>
+            <span class="author-block"><a href="http://pfliu.com/">Pengfei Liu</a><sup>1, 2, 3+</sup></span>
+        </div>
+        
+        <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University,</span>
+            <span class="author-block"><sup>2</sup>Shanghai Artificial Intelligence Laboratory,</span>
+          <span class="author-block"><sup>3</sup>Fudan University,</span>
+            <span class="author-block"><sup>4</sup>Generative AI Research Lab (GAIR)</span>
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><sup>*</sup>Co-first authors</span>
+          <span class="author-block"><sup>+</sup>Corresponding authors</span>
+        </div>
+        
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2406.12753" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/GAIR-NLP/anole" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+                </a>
+            </span>
+            <!-- Dataset Link. -->
+            <span class="link-block">
+              <a href="https://huggingface.co/GAIR/Anole-7b-v0.1" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <p style="font-size:18px">🤗</p>
+                </span>
+                <span>Model</span>
+              </a>
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-centered">
+          <img src="static/images/anole_logo.png" width=100%/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">👋 Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>Anole</b> is the first open-source, autoregressive, and natively trained large multimodal model capable of interleaved image-text generation (without using stable diffusion). While it builds upon the strengths of Chameleon, Anole excels at the complex task of generating coherent sequences of alternating text and images. Through an innovative fine-tuning process using a carefully curated dataset of approximately 6,000 images, Anole achieves remarkable image generation and understanding capabilities with minimal additional training. This efficient approach, combined with its open-source nature, positions Anole as a catalyst for accelerated research and development in multimodal AI. Preliminary tests demonstrate Anole's exceptional ability to follow nuanced instructions, producing high-quality images and interleaved text-image content that closely aligns with user prompts.
+          </p>
+
+          <div align="center">
+            <img src="static/images/interleaved.png" width=100%/>
+          </div>
+            
+          The major functionalities of Anole are listed below:
+          <ul>
+            <li><b>Text-to-Image Generation</b></li>
+            <li><b>Interleaved Text-Image Generation</b></li>
+            <li><b>Text Generation</b></li>
+            <li><b>Fine-grained Evaluation</b></li>
+          </ul>
+          where <b>Bold</b> represents newly added capabilities on the basis of Chameleon.
+          <p>
+            
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 id="leaderboard" class="title is-3">📊 Examples</h2>
+        <div class="content">
+
+        <div align="center">
+            <img src="static/images/other1.png" width=100%/>
+            <img src="static/images/other2.png" width=100%/>
+            <img src="static/images/other3.png" width=100%/>
+            <img src="static/images/text2image.png" width=100%/>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 id="leaderboard" class="title is-3">🔍 Methodology</h2>
+        <div class="content">
+
+        <div align="center">
+            <img src="static/images/anole_main.png" width=100%/>
+        </div>
+        <div style="text-align: left;">
+        <p>Based on available information and our testings, the latest release of Chameleon have demonstrated strong performance in text understanding, text generation, and multimodal understanding. Anole, build on top of Chameleon, aiming to facilitate the image generation and multimodal generation capabilities from Chameleon.</p>
+        <p>Chameleon’s pre-training data natively includes both text and image modalities, theoretically equipping it with image generation capabilities. Our goal is to facilitate this ability without compromising its text understanding, generation, and multimodal comprehension. To achieve this, we froze most of Chameleon’s parameters and fine-tuned only the logits corresponding to image token ids in transformer’s output head layer.</p>
+        <p>Specifically, Anole-7b-v0.1 was developed using a small amount of image data (5,859 images, approximately 6 million image tokens) and was fine-tuned on just a few parameters (less than 40M) in a short time (around 30 minutes on 8 A100 GPUs). Despite this, Anole-7b-v0.1 expresses impressive image generation capabilities.</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Contact. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">📬 Contact</h2>
+        <div class="content has-text-justified">
+          <p>
+            If you have any questions regarding this project, feel free to directly submit a <a href="https://github.com/GAIR-NLP/anole">github issue</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{anole,
+      title={Anole: An Open, Autoregressive and Native Multimodal Models for Interleaved Image-Text Generation},
+      author={Chern, Ethan and Su, Jiadi and Ma, Yan and Liu, Pengfei},
+      year={2024},
+      journal = {GitHub repository},
+      url={https://github.com/GAIR-NLP/anole}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer centered-footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .hidden {
+      display: none;
+  }
+  .sortable:hover {
+      cursor: pointer;
+  }
+  .asc::after {
+      content: ' ↑';
+  }
+  .desc::after {
+      content: ' ↓';
+  }
+  #toggleButton {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    color: #555555;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition-duration: 0.4s;
+  }
+
+  #toggleButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* 鼠标悬停时的阴影效果 */
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+
+  th, td {
+      text-align: left;
+      padding: 8px;
+  }
+
+  th {
+      background-color: #f2f2f2;
+      border-bottom: 2px solid #ddd;
+  }
+
+  td:hover {background-color: #ffffff;}
+  
+  .medal-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .ranking-icon {
+    width: 40px;
+    height: 20px;
+  }
+  .header-cell {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .header-row th{
+    background-color: #fff9c4;
+  }
+  .columns {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .column {
+    flex: 1;
+    min-width: 100%;
+  }
+
+  table {
+    width: max-content;
+    min-width: 100%;
+  }
+
+  .centered-footer {
+    text-align: center;
+  }
+
+
+
+</style>
+
+
+
+
+</body>
+</html>
