@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  📊 <a href="https://github.com/GAIR-NLP/PrivateChameleon#-examples" target="_blank">Example</a> &nbsp; | &nbsp;
+  📊 <a href="https://github.com/GAIR-NLP/anole#-examples" target="_blank">Example</a> &nbsp; | &nbsp;
   🤗 <a href="https://huggingface.co/GAIR/Anole-7b-v0.1" target="_blank">Hugging Face</a> &nbsp; | &nbsp;
   📤 <a href="https://github.com/GAIR-NLP/anole#-get-started" target="_self">Get Started</a> &nbsp; | &nbsp;
   🌐 <a href="https://gair-nlp.github.io/anole" target="_blank">Website</a> &nbsp; | &nbsp;
