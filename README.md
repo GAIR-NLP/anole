@@ -64,7 +64,7 @@ Based on available information and our testings, the latest release of Chameleon
 
 Chameleon’s pre-training data natively includes both text and image modalities, theoretically equipping it with image generation capabilities. Our goal is to facilitate this ability without compromising its text understanding, generation, and multimodal comprehension. To achieve this, we froze most of Chameleon’s parameters and **fine-tuned only the logits corresponding to image token ids** in transformer’s `output head` layer.
 
-Specifically, Anole-7b-v0.1 was developed using a small amount of image data (5,859 images, approximately 6 million image tokens) and was fine-tuned on just a few parameters (less than 40M) in a short time (around 30 minutes on 8 A100 GPUs). Despite this, Anole-7b-v0.1 expresses impressive image generation capabilities. In the next section, we will detail our approach to develop Anole-7b-v0.1 based on Chameleon.
+Specifically, Anole-7b-v0.1 was developed using a small amount of image data (5,859 images, approximately 6 million image tokens) and was fine-tuned on just a few parameters (less than 40M) in a short time (around 30 minutes on 8 A100 GPUs). Despite this, Anole-7b-v0.1 expresses impressive image generation capabilities.
 
 We are committed to continuously updating Anole to enhance its capabilities.
 
