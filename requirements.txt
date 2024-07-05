@@ -8,3 +8,6 @@ pyarrow==16.1.0
 xformers==0.0.23
 python-dotenv==1.0.1
 numpy==1.26.4
+click
+flask
+flask_socketio
