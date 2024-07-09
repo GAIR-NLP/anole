@@ -9,7 +9,7 @@
   🤗 <a href="https://huggingface.co/GAIR/Anole-7b-v0.1" target="_blank">Hugging Face</a> &nbsp; | &nbsp;
   📤 <a href="https://github.com/GAIR-NLP/anole#-get-started" target="_self">Get Started</a> &nbsp; | &nbsp;
   🌐 <a href="https://gair-nlp.github.io/anole" target="_blank">Website</a> &nbsp; | &nbsp;
-  📄 <a href="xxx" target="_blank">Preprint (Coming soon)</a> &nbsp; | &nbsp;
+  📄 <a href="http://arxiv.org/abs/2407.06135" target="_blank">Preprint</a> &nbsp; | &nbsp;
 </p>
 
 <p align="center">This is the GAIR Anole project, which aims to build and opensource large multimodal models with comprehensive multimodal understanding and generation capabilities.</p>
