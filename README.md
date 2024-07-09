@@ -129,9 +129,9 @@ For instance:
 python interleaved_generation.py -i 'Please introduce the city of Gyumri with pictures.'
 ```
 
-### Fine-tune Anole & Chameleon (To be finished)
+### Fine-tune Anole & Chameleon
 
-Please follow the instructions in [training](https://github.com/GAIR-NLP/PrivateChameleon/tree/main/training) and [facilitating_image_generation](https://github.com/GAIR-NLP/PrivateChameleon/tree/main/facilitating_image_generation). Note that we haven't thoroughly verified the efficacy of our full-parameter training code. We will continuously update this part.
+Please follow the instructions in [training](https://github.com/GAIR-NLP/PrivateChameleon/tree/main/training) and [facilitating_image_generation](https://github.com/GAIR-NLP/PrivateChameleon/tree/main/facilitating_image_generation). Note that we will continuously update this part.
 
 Our fine-tuning code is developed based on [transformers trainer](https://huggingface.co/docs/transformers/en/main_classes/trainer) and [deepspeed](https://github.com/microsoft/DeepSpeed) and is largely inspired by [pull request #31534](https://github.com/huggingface/transformers/pull/31534) in `transformers`.
 
