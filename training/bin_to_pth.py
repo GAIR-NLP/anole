@@ -5,9 +5,20 @@ from typing import Dict, Optional
 
 import torch
 from constants_training import (
+    ANOLE_PATH_HF_TRAINED,
     ANOLE_PATH_TORCH,
-    ANOLE_PATH_HF_TRAINED
 )
+
+files_to_copy = [
+    "models/7b/checklist.chk",
+    "models/7b/config.json",
+    "models/7b/consolidate_params.json",
+    "models/7b/params.json",
+    "tokenizer/checklist.chk",
+    "tokenizer/text_tokenizer.json",
+    "tokenizer/vqgan.ckpt",
+    "tokenizer/vqgan.yaml",
+]
 
 
 _FROM_BIN = {
@@ -82,11 +93,16 @@ def bin_to_pth(
 
 if __name__ == "__main__":
 
+    ANOLE_PATH_TORCH_NEW = ANOLE_PATH_TORCH.parent / "anole-7b-pth"
+    # Create directories if they do not exist
+    os.makedirs(ANOLE_PATH_TORCH_NEW / "models/7b", exist_ok=True)
+    os.makedirs(ANOLE_PATH_TORCH_NEW / "tokenizer", exist_ok=True)
+
     bin_state_dict = torch.load(
         ANOLE_PATH_HF_TRAINED / "pytorch_model.bin",
         map_location='cpu'
     )
-    print(f"loaded anole-bin weights from {ANOLE_PATH_HF_TRAINED / 'pytorch_model.bin'}.")
+    print(f"loaded anole-bin weights from {ANOLE_PATH_HF_TRAINED / 'pytorch_model.bin'}")
 
     # TODO: the following setting only for 7b model
     pth_state_dict = bin_to_pth(
@@ -96,5 +112,8 @@ if __name__ == "__main__":
         qk_norm=True,
     )
 
-    torch.save(pth_state_dict, ANOLE_PATH_TORCH / "models/7b/consolidated.pth")
-    print(f"saved anole-pth weights to {ANOLE_PATH_TORCH / 'models/7b/consolidated.pth'}.")
+    torch.save(pth_state_dict, ANOLE_PATH_TORCH_NEW / "models/7b/consolidated.pth")
+    print(f"saved anole-pth weights to {ANOLE_PATH_TORCH_NEW / 'models/7b/consolidated.pth'}")
+
+    for filename in files_to_copy:
+        shutil.copy(ANOLE_PATH_TORCH / filename, ANOLE_PATH_TORCH_NEW / filename)
