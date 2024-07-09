@@ -43,7 +43,8 @@ python convert_chameleon_weights_to_hf.py --model_size 7B --input_dir ANOLE_PATH
 bash train.sh
 ```
 
-7. Convert the huggingface model back to the torch model for inference (TODO)
+7. Convert the huggingface model back to the torch model for inference
 ```
-TODO
+# specify `ANOLE_PATH_HF_TRAINED` and `ANOLE_PATH_TORCH` in constants_training.py
+python bin_to_pth.py
 ```
