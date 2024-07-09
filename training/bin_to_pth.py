@@ -82,12 +82,6 @@ def bin_to_pth(
 
 if __name__ == "__main__":
 
-    from pathlib import Path
-    ANOLE_PATH_HF_TRAINED = Path("/nas/shared/GAIR/ethan/chameleon/0629_5000_trained")
-    ANOLE_PATH_TORCH = Path(
-        "/nas/shared/GAIR/ckpts/meta-chameleon/meta-chameleon-7b-bin2pth"
-    )
-
     bin_state_dict = torch.load(
         ANOLE_PATH_HF_TRAINED / "pytorch_model.bin",
         map_location='cpu'
