@@ -155,3 +155,14 @@ Anole is still under development and has many limitations that need to be addres
 ## 🙏 Acknowledgements
 * We sincerely thank the Meta Chameleon Team for open-sourcing [Chameleon](https://github.com/facebookresearch/chameleon), as most of our inference code is based on it.
 * We also greatly appreciate [@zucchini-nlp](https://github.com/zucchini-nlp)  and all the contributors who have contributed to [pull request #31534](https://github.com/huggingface/transformers/pull/31534) submitted to `transformers`. This PR is crucial for the development of our training code.
+
+## Citation
+Please cite our [paper](https://arxiv.org/abs/2407.06135) if you find the repository helpful.
+```
+@article{chern2024anole,
+  title={ANOLE: An Open, Autoregressive, Native Large Multimodal Models for Interleaved Image-Text Generation},
+  author={Chern, Ethan and Su, Jiadi and Ma, Yan and Liu, Pengfei},
+  journal={arXiv preprint arXiv:2407.06135},
+  year={2024}
+} 
+```
