@@ -20,13 +20,17 @@ def main(args: argparse.Namespace):
     print(f"Batch size: {args.batch_size}")
     
     # Load Chameleon model
-    model = ChameleonInferenceModel(
+    unquantized_model = ChameleonInferenceModel(
         MODEL_7B_PATH.as_posix(),
         TOKENIZER_TEXT_PATH.as_posix(),
         TOKENIZER_IMAGE_CFG_PATH.as_posix(),
         TOKENIZER_IMAGE_PATH.as_posix(),
     )
-    
+    model = torch.quantization.quantize_dynamic(
+        unquantized_model,  # The model to be quantized
+        {torch.nn.Linear, torch.nn.LSTM},  # Layers to be dynamically quantized
+        dtype=torch.qint8  # Data type for quantization
+    )
     # Generate options
     options = Options()
     options.txt = False
