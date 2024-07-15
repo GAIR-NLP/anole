@@ -82,7 +82,6 @@ def main(args: argparse.Namespace):
     with open(input_path, "r") as f:
         input_segs: List[Dict[str, str]] = json.load(f)
         assert not input_segs is None
-    print(f"load input done.")
     batch_prompt_ui = [[]]
     for input_seg in input_segs:
         if input_seg["type"] == "text":
@@ -103,7 +102,6 @@ def main(args: argparse.Namespace):
     # split
     boi, eoi = model.vocab.begin_image, model.vocab.end_image   # 8197(boi), 8196(eoi)
     segments = split_token_sequence(tokens, boi, eoi)
-    print(segments)
     # decode
     os.makedirs(args.save_dir, exist_ok=True)
     for seg_id, (seg_type, seg_tokens) in enumerate(segments):
