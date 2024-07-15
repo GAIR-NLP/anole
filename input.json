@@ -1,0 +1,10 @@
+[
+    {
+        "type": "text",
+        "content": "While chameleons are masters of camouflage in the natural world, let's see how they might fare in a man-made setting. 1. Analyze the colors, patterns, and textures in this image and identify the most challenging spot for a chameleon to blend in. 2. Then generate an image of a chameleon with the optimal pattern to camouflage itself. 3. Then, rate and explain how successful each attempt is on a scale from 1-10."
+    },
+    {
+        "type": "image",
+        "content": "assets/stop_sign.png"
+    }
+]
