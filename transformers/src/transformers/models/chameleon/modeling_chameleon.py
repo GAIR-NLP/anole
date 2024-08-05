@@ -262,6 +262,29 @@ class ChameleonAttention(nn.Module):
             self.q_norm = nn.LayerNorm(self.head_dim)
             self.k_norm = nn.LayerNorm(self.head_dim)
         self._init_rope()
+        self._register_load_state_dict_pre_hook(self.load_hook)
+
+    def load_hook(
+            self,
+            state_dict,
+            prefix,
+            local_metadata,
+            strict,
+            missing_keys,
+            unexpected_keys,
+            error_msgs,
+        ):
+            if prefix + "q_norm.weight" in state_dict:
+                wq_norm = state_dict.pop(prefix + "q_norm.weight") # (num_q_head, dim)
+                # print("wq_norm: ", wq_norm.shape, torch.all(wq_norm[0] == wq_norm[1]))
+                wq_norm_bias = state_dict.pop(prefix + "q_norm.bias")
+                state_dict[prefix + "q_norm.weight"] = wq_norm[0,:] # all the head is the same, take the first one
+                state_dict[prefix + "q_norm.bias"] = wq_norm_bias[0,:] # all the head is the same, take the first one
+            if prefix + "k_norm.weight" in state_dict:
+                wq_norm = state_dict.pop(prefix + "k_norm.weight") # (num_kv_head, dim)
+                wq_norm_bias = state_dict.pop(prefix + "k_norm.bias")
+                state_dict[prefix + "k_norm.weight"] = wq_norm[0,:] # all the head is the same, take the first one
+                state_dict[prefix + "k_norm.bias"] = wq_norm_bias[0,:] # all the head is the same, take the first one
 
     # Copied from transformers.models.llama.modeling_llama.LlamaAttention._init_rope with Llama->Chameleon
     def _init_rope(self):
