@@ -144,7 +144,7 @@ python inference.py -i input.json
 
 ### Fine-tune Anole & Chameleon
 
-Please follow the instructions in [training](https://github.com/GAIR-NLP/PrivateChameleon/tree/main/training) and [facilitating_image_generation](https://github.com/GAIR-NLP/PrivateChameleon/tree/main/facilitating_image_generation). Note that we will continuously update this part.
+Please follow the instructions in [training](https://github.com/GAIR-NLP/anole/tree/main/training) and [facilitating_image_generation](https://github.com/GAIR-NLP/anole/tree/main/facilitating_image_generation). Note that we will continuously update this part.
 
 Our fine-tuning code is developed based on [transformers trainer](https://huggingface.co/docs/transformers/en/main_classes/trainer) and [deepspeed](https://github.com/microsoft/DeepSpeed) and is largely inspired by [pull request #31534](https://github.com/huggingface/transformers/pull/31534) in `transformers`.
 
