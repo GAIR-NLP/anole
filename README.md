@@ -14,6 +14,9 @@
 
 <p align="center">This is the GAIR Anole project, which aims to build and opensource large multimodal models with comprehensive multimodal understanding and generation capabilities.</p>
 
+## 📢 News 
+[2025/05/26] 🔥 We're excited to release [Thinking with Generated Images](https://github.com/GAIR-NLP/thinking-with-generated-images), which demonstrates how Anole can be post-trained to "think" using generated images. We also show how test-time scaling can be applied to unified large multimodal models. Additionally, we've included the latest training code on Anole with Hugging Face Transformers support in the Thinking with Generated Images repository.
+
 ## 👋 Overview
 [Anole](https://huggingface.co/GAIR/Anole-7b-v0.1) is the first **open-source**, **autoregressive**, and **natively** trained large multimodal model capable of **interleaved image-text generation** (without using **stable diffusion**). While it builds upon the strengths of [Chameleon](https://github.com/facebookresearch/chameleon), Anole excels at the complex task of generating coherent sequences of alternating text and images. Through an innovative fine-tuning process using a carefully curated dataset of approximately 6,000 images, Anole achieves remarkable image generation and understanding capabilities with minimal additional training. This efficient approach, combined with its open-source nature, **positions Anole as a catalyst for accelerated research and development in multimodal AI**. Preliminary tests demonstrate Anole's exceptional ability to follow nuanced instructions, producing high-quality images and interleaved text-image content that closely aligns with user prompts. 
 
